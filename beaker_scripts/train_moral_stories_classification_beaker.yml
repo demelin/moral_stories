@@ -1,0 +1,74 @@
+description: {{.Env.DESC}}
+tasks:
+  - name: training
+    cluster: {{.Env.CLUSTER}}
+    spec:
+      image: {{.Env.IMAGE_NAME}}
+      resultPath: /output
+      args:
+        - python
+        - experiments/run_baseleine_experiment.py
+        - --model_type
+        - {{.Env.MODEL_TYPE}}
+        - --model_name_or_path
+        - {{.Env.MODEL_NAME_OR_PATH}}
+        - --task_name
+        - {{.Env.TASK_NAME}}
+        - --split_name
+        - {{.Env.SPLIT_NAME}}
+        - --do_eval
+        - --do_prediction
+        - --do_lower_case
+        - --data_dir
+        - {{.Env.DATA_DIR}}
+        - --max_seq_length
+        - {{.Env.MAX_SEQ_LENGTH}}
+        - --per_gpu_eval_batch_size
+        - {{.Env.EVAL_BATCH_SIZE}}
+        - --per_gpu_train_batch_size
+        - {{.Env.TRAIN_BATCH_SIZE}}
+        - --learning_rate
+        - {{.Env.LEARNING_RATE}}
+        - --num_train_epochs
+        - {{.Env.NUM_EPOCHS}}
+        - --output_dir
+        - {{.Env.OUTPUT_DIR}}
+        - --do_train
+        - --logging_steps
+        - {{.Env.LOGGING_STEPS}}
+        - --save_steps
+        - {{.Env.SAVE_STEPS}}
+        - --seed
+        - {{.Env.SEED}}
+        - --data_cache_dir
+        - /output/cache/
+        - --warmup_pct
+        - {{.Env.WARMUP_PCT}}
+        - --evaluate_during_training
+        - --save_total_limit
+        - {{.Env.SAVE_TOTAL_LIMIT}}
+        - --patience
+        - {{.Env.PATIENCE}}
+      env:
+        CLUSTER: {{.Env.CLUSTER}}
+        IMAGE_NAME: {{.Env.IMAGE_NAME}}
+        MODEL_TYPE: {{.Env.MODEL_TYPE}}
+        MODEL_NAME_OR_PATH: {{.Env.MODEL_NAME_OR_PATH}}
+        TASK_NAME: {{.Env.TASK_NAME}}
+        SPLIT_NAME: {{.Env.SPLIT_NAME}}
+        DATA_DIR: {{.Env.DATA_DIR}}
+        MAX_SEQ_LENGTH: {{.Env.MAX_SEQ_LENGTH}}
+        EVAL_BATCH_SIZE: {{.Env.EVAL_BATCH_SIZE}}
+        TRAIN_BATCH_SIZE: {{.Env.TRAIN_BATCH_SIZE}}
+        LEARNING_RATE: {{.Env.LEARNING_RATE}}
+        NUM_EPOCHS: {{.Env.NUM_EPOCHS}}
+        SEED: {{.Env.SEED}}
+        SAVE_TOTAL_LIMIT: {{.Env.SAVE_TOTAL_LIMIT}}
+        PATIENCE: {{.Env.PATIENCE}}
+      datasetMounts:
+        - datasetId: {{.Env.MS_DATASET}}
+          containerPath: {{.Env.MOUNT_POINT}}
+      requirements:
+        gpuCount: {{.Env.GPU_COUNT}}
+        gpuType: v100
+        preemptible: true

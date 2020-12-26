@@ -1,0 +1,51 @@
+description: coe_action_ranking
+tasks:
+  - name: coe_action_ranking
+    cluster: ... # has to be specified
+    spec:
+      image: ... # has to be specified
+      resultPath: /output
+      args:
+        - python
+        - experiments/run_coe_action_ranking_experiment.py
+        - --action_draft_model_type
+        - bart
+        - --action_classifier_model_type
+        - roberta
+        - --action_generator_checkpoint
+        - /ag_model/models/... # has to be specified
+        - --action_classifier_checkpoint
+        - /cl_model/models/... # has to be specified
+        - --split_name
+        - norm_distance
+        - --do_lower_case
+        - --do_sample
+        - --data_dir
+        - /data
+        - --max_seq_length
+        - 100
+        - --per_gpu_eval_batch_size
+        - 8
+        - --output_dir
+        - /output/models
+        - --seed
+        - 42
+        - --data_cache_dir
+        - /output/cache/
+        - --max_gen_length
+        - 60
+        - --p
+        - 0.9
+        - --num_actions
+        - 10
+      datasetMounts:
+        - datasetId: ... # has to be specified
+          containerPath: /data
+        - datasetId: ... # has to be specified
+          containerPath: /ag_model
+        - datasetId: ... # has to be specified
+          containerPath: /cl_model
+      requirements:
+        gpuCount: 1
+        gpuType: v100
+        preemptible: true

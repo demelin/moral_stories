@@ -1,0 +1,75 @@
+description: coe_consequence_iterative_refinement
+tasks:
+  - name: coe_consequence_iterative_refinement
+    cluster: ... # has to be specified
+    spec:
+      image: ... # has to be specified
+      resultPath: /output
+      args:
+        - python
+        - experiments/run_coe_consequence_iterative_refinement_experiment.py
+        - --consequence_generator_model_type
+        - t5
+        - --consequence_classifier_model_type
+        - roberta
+        - --consequence_refiner_model_type
+        - t5
+        - --consequence_generator_checkpoint
+        - /cg_model/models/... # has to be specified
+        - --consequence_classifier_checkpoint
+        - /cc_model/models/... # has to be specified
+        - --consequence_refiner_model_name_or_path
+        - t5-large
+        - --split_name
+        - norm_distance
+        - --do_eval
+        - --do_prediction
+        - --do_lower_case
+        - --do_sample
+        - --data_dir
+        - /data
+        - --max_seq_length
+        - 100
+        - --per_gpu_eval_batch_size
+        - 8
+        - --per_gpu_train_batch_size
+        - 8
+        - --learning_rate
+        - 5e-6
+        - --gradient_accumulation_steps
+        - 8
+        - --num_train_epochs
+        - 50
+        - --output_dir
+        - /output/models
+        - --do_train
+        - --logging_steps
+        - 500
+        - --save_steps
+        - 500
+        - --save_total_limit
+        - 6
+        - --patience
+        - 3
+        - --seed
+        - 42
+        - --data_cache_dir
+        - /output/cache/
+        - --evaluate_during_training
+        - --max_gen_length
+        - 60
+        - --p
+        - 0.9
+        - --num_consequences
+        - 10
+      datasetMounts:
+        - datasetId: ... # has to be specified
+          containerPath: /data
+        - datasetId: ... # has to be specified
+          containerPath: /cg_model
+        - datasetId: ... # has to be specified
+          containerPath: /cc_model
+      requirements:
+        gpuCount: 1
+        gpuType: v100
+        preemptible: true

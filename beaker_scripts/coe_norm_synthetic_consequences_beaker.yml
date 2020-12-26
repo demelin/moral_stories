@@ -1,0 +1,57 @@
+description: coe_norm_synthetic_consequences
+tasks:
+  - name: coe_norm_synthetic_consequences
+    cluster: ... # has to be specified
+    spec:
+      image: ... # has to be specified
+      resultPath: /output
+      args:
+        - python
+        - experiments/run_coe_norm_synthetic_consequences_experiment.py
+        - --consequence_generation_model_type
+        - t5
+        - --norm_generation_model_type
+        - t5
+        - --consequence_classifier_model_type
+        - roberta
+        - --consequence_generator_checkpoint
+        - /cg_model/models/... # has to be specified
+        - --norm_generator_checkpoint
+        - /ng_model/models/... # has to be specified
+        - --consequence_classifier_checkpoint
+        - /cc_model/models/... # has to be specified
+        - --split_name
+        - norm_distance
+        - --do_lower_case
+        - --do_sample
+        - --data_dir
+        - /data
+        - --max_seq_length
+        - 100
+        - --per_gpu_eval_batch_size
+        - 8
+        - --output_dir
+        - /output/models
+        - --seed
+        - 42
+        - --data_cache_dir
+        - /output/cache/
+        - --max_gen_length
+        - 60
+        - --p
+        - 0.9
+        - --num_actions
+        - 10
+      datasetMounts:
+        - datasetId: ... # has to be specified
+          containerPath: /data
+        - datasetId: ... # has to be specified
+          containerPath: /cg_model
+        - datasetId: ... # has to be specified
+          containerPath: /ng_model
+        - datasetId: ... # has to be specified
+          containerPath: /cc_model
+      requirements:
+        gpuCount: 1
+        gpuType: v100
+        preemptible: true
