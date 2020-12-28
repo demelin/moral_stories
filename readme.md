@@ -21,31 +21,31 @@
 ---
 
 ## Codebase
-We provide code for the replication of experiments described in :blue_book: **Sections 3 and 4** of the paper. <code>requirements.txt</code> specifies the libraries utilized by our codebase. Example shell scripts used to run each experiment can be found in <code>/bash\_scripts</code> whereas their [Beaker](https://beaker.org/) analogues are given in <code>\beaker\_scripts</code>. The following provides an overview of the individual files included in the codebase:
+We provide code for the replication of data curation steps as well as experiments discussed in our paper. <code>requirements.txt</code> specifies libraries utilized by the codebase. Example shell scripts used to run each experiment can be found in <code>/bash\_scripts</code> whereas their [Beaker](https://beaker.org/) analogues are provided in <code>\beaker\_scripts</code>. The following briefly describes individual files included in the codebase:
 
 ### Dataset collection
 (:blue_book: See **Section 2** of the paper.)
-* <code>collect\_sc101\_writing\_prompts.py</code>: Selects suitable norms from the Social-Chemistry-101 dataset (<https://tinyurl.com/y7t7g2rx>) to be used as * writing prompts for crowd-workers.
+* <code>collect\_sc101\_writing\_prompts.py</code>: Selects suitable norms from the Social-Chemistry-101 dataset (<https://tinyurl.com/y7t7g2rx>) to be used as writing prompts for crowd-workers.
 * <code>show\_human\_validation\_stats.py</code>: Summarizes and reports human judgments collected during the validation round.
-* <code>remove\_low\_scoring\_stories.py</code>: Removes stories that have received a low score during the validation round from the dataset.
+* <code>remove\_low\_scoring\_stories.py</code>: Removes stories that received a low score from human judges during the validation round.
 * <code>show\_dataset\_stats.py</code>: Computes and reports various dataset statistics.
 * <code>identify\_latent\_topics.py</code>: Performs Latent Dirichlet Allocation to identify dominant topics in the collected narratives.
 
 ### Split creation
 (:blue_book: See **Section 3** of the paper.)
-* <code>create\_action\_lexical\_bias\_splits.py</code>: Splits the MS dataset according to surface-level lexical correlations detected in actions.
-* <code>create\_consequence\_lexical\_bias\_splits.py</code>: Splits the MS dataset according to surface-level lexical correlations detected in consequences.
-* <code>create\_minimal\_action\_pairs\_splits.py</code>: Splits the MS dataset by prioritizing stories with minimally different action pairs for the inclusion in the test set.
-* <code>create\_minimal\_consequence\_pairs\_splits.py</code>: Splits the MS dataset by prioritizing stories with minimally different consequence pairs for the inclusion in the test set.
-* <code>create\_norm\_distance\_splits.py</code>: Splits the MS dataset by prioritizing stories with unique norms for the inclusion in the test set. 
+* <code>create\_action\_lexical\_bias\_splits.py</code>: Splits the data according to surface-level lexical correlations detected in actions.
+* <code>create\_consequence\_lexical\_bias\_splits.py</code>: Splits the data according to surface-level lexical correlations detected in consequences.
+* <code>create\_minimal\_action\_pairs\_splits.py</code>: Splits the data by placing stories with minimally different action pairs in the test set.
+* <code>create\_minimal\_consequence\_pairs\_splits.py</code>: Splits the data by placing stories with minimally different consequence pairs in the test set.
+* <code>create\_norm\_distance\_splits.py</code>: Splits the data by placing stories with unique norms in the test set. 
 
 ### Experiments
 (:blue_book: See **Sections 3 and 4** of the paper.)
-* <code>compute\_generation\_metrics.py</code>: Helper script for the computation of automated generation quality metrics. 
+* <code>compute\_generation\_metrics.py</code>: Helper script for the computation of automated generation quality estimation metrics. 
 * <code>compute\_norm\_diversity.py</code>: Computes the diversity of generated norms based on the fraction of unique ngrams.
 * <code>run\_baseline\_experiment.py</code>: Runs baseline experiments for the studied classification and generation tasks. 
 * <code>run\_coe\_action\_ranking\_experiment.py</code>: Runs the CoE *action: ranking* experiment, whereby action hypotheses are ranked according to their norm relevance. 
-* <code>run\_coe\_action\_abductive\_refinement\_experiment.py</code>: Runs the CoE *action: abductive refinement* experiment, whereas action hypotheses are rewritten by taking into account their expected outcomes.
+* <code>run\_coe\_action\_abductive\_refinement\_experiment.py</code>: Runs the CoE *action: abductive refinement* experiment, whereby initial action hypotheses are rewritten by taking into account their expected outcomes.
 * <code>run\_coe\_consequence\_ranking\_experiment.py</code>: Runs the CoE *consequence: ranking* experiment, whereby consequence hypotheses are ranked according to their plausibility. 
 * <code>run\_coe\_consequence\_iterative\_refinement\_experiment.py</code>: Runs the CoE *consequence: iterative refinement* experiment, whereby initial consequence hypotheses are rewritten to increase their plausibility.
 * <code>run\_coe\_norm\_synthetic\_consequences\_experiment.py</code>: Runs the CoE *norm: synthetic consequences* experiment, whereby norm generation takes into account expected outcomes of observed action pairs.
@@ -53,9 +53,9 @@ We provide code for the replication of experiments described in :blue_book: **Se
 
 ### Human evaluation
 (:blue_book: See **Section 4** of the paper.)
-* <code>get\_action\_stats.py</code>: Summarizes and reports human evaluation statistics (obtained via AMT) for an action generation task.
-* <code>get\_consequence\_stats.py</code>: Summarizes and reports human evaluation statistics for a consequence generation task.
-* <code>get\_norm\_stats.py</code>: Summarizes and reports human evaluation statistics for a norm generation task.
+* <code>get\_action\_stats.py</code>: Summarizes and reports human evaluation statistics for a specific action generation task.
+* <code>get\_consequence\_stats.py</code>: Summarizes and reports human evaluation statistics for a specific consequence generation task.
+* <code>get\_norm\_stats.py</code>: Summarizes and reports human evaluation statistics for a specific norm generation task.
 
 ---
 
