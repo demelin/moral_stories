@@ -43,7 +43,7 @@ We provide code for the replication of data curation steps as well as experiment
 (:blue_book: See **Sections 3 and 4** of the paper.)
 * <code>compute\_generation\_metrics.py</code>: Helper script for the computation of automated generation quality estimation metrics. 
 * <code>compute\_norm\_diversity.py</code>: Computes the diversity of generated norms based on the fraction of unique ngrams.
-* <code>run\_baseline\_experiment.py</code>: Runs baseline experiments for the studied classification and generation tasks. 
+* <code>run\_baseline\_experiment.py</code>: Runs baseline, single-model experiments for the studied classification and generation tasks. 
 * <code>run\_coe\_action\_ranking\_experiment.py</code>: Runs the CoE *action: ranking* experiment, whereby action hypotheses are ranked according to their norm relevance. 
 * <code>run\_coe\_action\_abductive\_refinement\_experiment.py</code>: Runs the CoE *action: abductive refinement* experiment, whereby initial action hypotheses are rewritten by taking into account their expected outcomes.
 * <code>run\_coe\_consequence\_ranking\_experiment.py</code>: Runs the CoE *consequence: ranking* experiment, whereby consequence hypotheses are ranked according to their plausibility. 
