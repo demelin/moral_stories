@@ -21,7 +21,7 @@
 ---
 
 ## Codebase
-We provide code for the replication of data curation steps as well as experiments discussed in our paper. <code>requirements.txt</code> specifies libraries utilized by the codebase. Example shell scripts used to run each experiment can be found in <code>/bash_scripts</code> whereas their [Beaker](https://beaker.org/) analogues are provided in <code>\beaker_scripts</code>. The following briefly describes individual files included in the codebase:
+We provide code for the replication of data curation steps as well as experiments discussed in our paper. <code>requirements.txt</code> specifies libraries utilized by the codebase. Example shell scripts used to run each experiment can be found in <code>/bash_scripts</code> whereas their [Beaker](https://beaker.org/) analogues are provided in <code>/beaker_scripts</code>. The following briefly describes individual files included in the codebase:
 
 ### Dataset collection
 (:blue_book: See **Section 2** of the paper.)
