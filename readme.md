@@ -4,6 +4,8 @@
   <img src="images/example.png" />
 </p>
 
+Full paper is available here: <https://arxiv.org/abs/2012.15738>
+
 **Abstract**: In social settings, much of human behavior is governed by unspoken rules of conduct. For artificial systems to be fully integrated into social environments, adherence to such norms is a central prerequisite. We investigate whether contemporary NLG models can function as behavioral priors for systems deployed in social settings by generating action hypotheses that achieve predefined goals under moral constraints. Moreover, we examine if models can anticipate likely consequences of (im)moral actions, or explain why certain actions are preferable by generating relevant norms. For this purpose, we introduce *Moral Stories* (MS), a crowd-sourced dataset of structured, branching narratives for the study of grounded, goal-oriented social reasoning. Finally, we propose decoding strategies that effectively combine multiple expert models to significantly improve the quality of generated actions, consequences, and norms compared to strong baselines, e.g. though abductive reasoning.
 
 ---
@@ -62,6 +64,11 @@ We provide code for the replication of data curation steps as well as experiment
 ## Citation
 
 ```
-TODO
+@article{emelin2020moral,
+  title={Moral Stories: Situated Reasoning about Norms, Intents, Actions, and their Consequences},
+  author={Denis Emelin and Ronan Le Bras and Jena D. Hwang and Maxwell Forbes and Yejin Choi},
+  journal={arXiv preprint arXiv:2012.15738},
+  year={2020}
+}
 ```
 
