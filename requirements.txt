@@ -19,7 +19,7 @@ jsons==1.2.0
 kiwisolver==1.2.0
 krippendorff==0.3.2
 language-tool-python==2.4.2
-lxml==4.5.2
+lxml==4.6.2
 matplotlib==3.3.2
 more-itertools==8.5.0
 murmurhash==1.0.2
