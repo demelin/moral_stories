@@ -64,11 +64,22 @@ We provide code for the replication of data curation steps as well as experiment
 ## Citation
 
 ```
-@article{emelin2020moral,
-  title={Moral Stories: Situated Reasoning about Norms, Intents, Actions, and their Consequences},
-  author={Denis Emelin and Ronan Le Bras and Jena D. Hwang and Maxwell Forbes and Yejin Choi},
-  journal={arXiv preprint arXiv:2012.15738},
-  year={2020}
+@inproceedings{emelin-etal-2021-moral,
+    title = "Moral Stories: Situated Reasoning about Norms, Intents, Actions, and their Consequences",
+    author = "Emelin, Denis  and
+      Le Bras, Ronan  and
+      Hwang, Jena D.  and
+      Forbes, Maxwell  and
+      Choi, Yejin",
+    booktitle = "Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2021",
+    address = "Online and Punta Cana, Dominican Republic",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.emnlp-main.54",
+    doi = "10.18653/v1/2021.emnlp-main.54",
+    pages = "698--718",
+    abstract = "In social settings, much of human behavior is governed by unspoken rules of conduct rooted in societal norms. For artificial systems to be fully integrated into social environments, adherence to such norms is a central prerequisite. To investigate whether language generation models can serve as behavioral priors for systems deployed in social settings, we evaluate their ability to generate action descriptions that achieve predefined goals under normative constraints. Moreover, we examine if models can anticipate likely consequences of actions that either observe or violate known norms, or explain why certain actions are preferable by generating relevant norm hypotheses. For this purpose, we introduce Moral Stories, a crowd-sourced dataset of structured, branching narratives for the study of grounded, goal-oriented social reasoning. Finally, we propose decoding strategies that combine multiple expert models to significantly improve the quality of generated actions, consequences, and norms compared to strong baselines.",
 }
 ```
 
