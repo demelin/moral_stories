@@ -12,7 +12,7 @@ Full paper is available here: <https://aclanthology.org/2021.emnlp-main.54.pdf>
 
 ## Dataset
 ### Overview
-**The *Moral Stories* dataset is available at <https://tinyurl.com/y99sg2uq>.** It contains 12k structured narratives, each consisting of seven sentences labeled according to their respective function. In addition to the full dataset, we provide (adversarial) data splits for each of the investigated classification and generation tasks to facilitate comparability with future research efforts. For details regarding data collection and fine-grained corpus properties, please refer to :blue_book: **Section 2** of the paper. 
+**The *Moral Stories* dataset is available at <https://tinyurl.com/moral-stories-data>.** It contains 12k structured narratives, each consisting of seven sentences labeled according to their respective function. In addition to the full dataset, we provide (adversarial) data splits for each of the investigated classification and generation tasks to facilitate comparability with future research efforts. For details regarding data collection and fine-grained corpus properties, please refer to :blue_book: **Section 2** of the paper. 
 
 ### Story examples
 
