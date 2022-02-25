@@ -22,6 +22,12 @@ Full paper is available here: <https://aclanthology.org/2021.emnlp-main.54.pdf>
 
 ---
 
+## Quick guide: Evaluating models on Wino-X
+1. Estimate model accuracy by running one of the experiment scripts, e.g. <code>experiments/run\_baseline\_experiment.py</code>.
+2. Optionally, compute model accuracy separately by running the <code>experiments/compute\_generation\_metrics.py</code> script on specified model generations. 
+
+---
+
 ## Codebase
 We provide code for the replication of data curation steps as well as experiments discussed in our paper. <code>requirements.txt</code> specifies libraries utilized by the codebase. Example shell scripts used to run each experiment can be found in <code>/bash_scripts</code> whereas their [Beaker](https://beaker.org/) analogues are provided in <code>/beaker_scripts</code>. The following briefly describes individual files included in the codebase:
 
