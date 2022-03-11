@@ -39,7 +39,7 @@ from utils import (compute_cls_metrics, compute_gen_metrics,
 
 logger = logging.getLogger(__name__)
 MODEL_CLASSES = {
-    'roberta': (RobertaConfig, RobertaForSequenceClassification, RobertaTokenizer),
+    'roberta': (AutoConfig, AutoModelForSequenceClassification, AutoTokenizer),
     'gpt2': (GPT2Config, GPT2LMHeadModel, GPT2Tokenizer),
     'bart': (BartConfig, BartForConditionalGeneration, BartTokenizer),
     't5': (T5Config, T5ForConditionalGeneration, T5Tokenizer),
