@@ -1,6 +1,6 @@
 # Addendum
 
-While the *Moral Stories* data set was created for this study and the code reflects this, there are some additional considerations so that the default scripts in this folder run with minimal further tweaking.
+To setup your repository and experiments before running the scripts, check the following steps.
 
 ## Staging the Data
 
