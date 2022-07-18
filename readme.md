@@ -4,7 +4,7 @@
   <img src="images/example.png" />
 </p>
 
-Dataset is now also available on HuggingFace: <https://huggingface.co/datasets/demelin/moral_stories>.
+Dataset is now also available on HuggingFace: <https://huggingface.co/datasets/demelin/moral_stories>.  
 Full paper is available here: <https://aclanthology.org/2021.emnlp-main.54.pdf>
 
 **Abstract**: In social settings, much of human behavior is governed by unspoken rules of conduct. For artificial systems to be fully integrated into social environments, adherence to such norms is a central prerequisite. We investigate whether contemporary NLG models can function as behavioral priors for systems deployed in social settings by generating action hypotheses that achieve predefined goals under moral constraints. Moreover, we examine if models can anticipate likely consequences of (im)moral actions, or explain why certain actions are preferable by generating relevant norms. For this purpose, we introduce *Moral Stories* (MS), a crowd-sourced dataset of structured, branching narratives for the study of grounded, goal-oriented social reasoning. Finally, we propose decoding strategies that effectively combine multiple expert models to significantly improve the quality of generated actions, consequences, and norms compared to strong baselines, e.g. though abductive reasoning.
